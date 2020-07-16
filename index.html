@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+	<meta name="viewport" content="width=device-width, height=device-heigth, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="base.css">
+</head>
+<body>
+	<div class="main">
+		<div class="main-cards">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 card-content">
+    					<h1>Off-Grid Calculator</h1>                    
+                        <div>
+                        	<h3>Size Your System for Off-Grid</h3>
+                        	<ol>
+                        		<li>Enter your zip code</li>
+                        		<li>Choose your mounting option</li>
+                        		<li>Describe your shade coverage</li>
+                        		<li>Fill out the Load Evaluation Calculator</li>
+                        		<li>Calculate your system size</li>
+                        	</ol>
+                        </div>
+					</div>
+					<div col-md-6></div>
+				</div>
+			</div>
+		</div>
+		<div class="main-cards-alt">
+			<div class="container">
+				<h2 class="step-1">Step 1: Enter your zip code</h2>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="zip-form">
+							<div class="form-head"><strong>Enter your zip code</strong>, and we'll look up the the sun hours in your area.</div>
+							<div class="form-entry d-flex">
+								<div class="input-entry">
+									<div class="d-flex">
+										<input id="zip-code" type="text">
+										<button id="enter-zip" class="btn btn-primary">Find</button>
+									</div>
+								</div>
+								<div class="set-counter">
+									<div class="number-input d-flex"> 
+										<input id="sun-hour-display" class="number-input__value" value="7" readonly>
+										<div class="counter-btns">
+											<button class="number-input__up number-input__btn" id="up"></button>
+											<button class="number-input__down number-input__btn" id="down"></button>
+										</div>
+									</div>
+									<div class="l-calculator__zip-section-zipform-light text-center">Sun Hours/Day</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+							<div class="zip-right">
+								<h3>How many Sun Hours do you average per day?</h3>
+								<p class="step-text">This is based on an&nbsp;<b>annual average</b>. Depending on your location and energy usage patterns, you might need a larger system to avoid using a backup generator excessively during the winter months.</p>
+								<p class="step-text">You can also look at the&nbsp;<a href="#">Solar Map</a>&nbsp;to find this number.</p>
+								<div class="">
+									<div>Typically&nbsp;<b>4-6</b>&nbsp;hours, most of the US receives an average of around 5 sun hours per day.</div>
+									<div class="l-calculator__percentage-zipform-disclaimer">*An overestimation of sun hours will result in an incorrect system calculation.</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="main-cards">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 card-content">
+							<div class="form-radio-head">
+								<h2>Step 2: Choose your mounting option</h2>
+							</div>
+							<div class="form-radio-body">
+								<h3>Where do you plan on mounting your solar panels?</h3>
+									<input type="radio" name="a1" id="o1" value="roof mounted">
+									<label for="o1">Roof Mounted</label>
+									<br>
+									<input type="radio" name="a1" id="o2" value="ground mounted">
+									<label for="o1">Ground Mounted</label>
+									<br>
+									<input type="radio" name="a1" id="o3" value="to be determined">
+									<label for="o1">To Be Determined</label>
+									<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-cards-alt">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 card-content">
+							<div class="form-radio-head">
+								<h2>Step 3: Describe your shade coverage</h2>
+							</div>
+							<div class="form-radio-body">
+								<h3>How much shade will affect your solar panels?</h3>
+									<input type="radio" name="a1" id="o1">
+									<label for="o1">No shade/full sun</label>
+									<br>
+									<input type="radio" name="a1" id="o2">
+									<label for="o1">Partial shade</label>
+									<br>
+									<input type="radio" name="a1" id="o3">
+									<label for="o1">Significant shade</label>
+									<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-cards">
+				<div class="container">
+					<h2 class="main-form-head">Step 4: Fill Out Load Evaluation Calculator</h2>
+					<div class="calculator">
+						<div class="inner-calc">
+							<h3 class="calculator-comp__heading text-center">Wholesale Solar Load Evaluation Calculator</h3>
+							<div class="calculator-comp__field-wrap">
+								<div class="d-flex flex-wrap justify-content-between">
+									<div class="input-large field-label"><span>Appliance</span></div>
+									<div class="input-quantiy field-label"><span>Quantity</span></div>
+									<div class="input-wats field-label"><span>Watts (V x A)<br>Mult. * 1.5 for AC conversion</span></div>
+									<div class="input-quantiy field-label"><span>Hours On per Day</span></div>
+									<div class="input-quantiy field-label"><span>Watt Hours per Day</span></div>
+								</div>
+								<div id="fields-container">
+									<div class="field-line d-flex flex-wrap justify-content-between">
+										<select class="select-field" name="appliance">
+											<span class="opt-holder"><option disabled selected hidden>SELECT AN APPLIENCE</option></span>
+											<option value="0">Blender</option>
+											<option value="1">Can Opener</option>
+											<option value="2">Coffee Machine</option>
+										</select>
+										<input type="hidden" name="appliance[]"> 
+										<input type="number" class="input-quantiy" name="quantity[]"> 
+										<input type="number" class="input-wats" name="watts[]"> 
+										<input type="number" step="any" class="input-quantiy" name="hours-per-day[]"> 
+										<input type="text" class="input-quantiy" name="watts-hours-per-day[]">
+									</div>
+									<div class="field-line d-flex flex-wrap justify-content-between">
+										<select class="select-field" name="appliance">
+											<span class="opt-holder"><option disabled selected hidden>SELECT AN APPLIENCE</option></span>
+											<option value="0">Blender</option>
+											<option value="1">Can Opener</option>
+											<option value="2">Coffee Machine</option>
+										</select>
+										<input type="hidden" name="appliance[]"> 
+										<input type="number" class="input-quantiy" name="quantity[]"> 
+										<input type="number" class="input-wats" name="watts[]"> 
+										<input type="number" step="any" class="input-quantiy" name="hours-per-day[]"> 
+										<input type="text" class="input-quantiy" name="watts-hours-per-day[]">
+									</div>
+									<div class="field-line d-flex flex-wrap justify-content-between">
+										<select class="select-field" name="appliance">
+											<span class="opt-holder"><option disabled selected hidden>SELECT AN APPLIENCE</option></span>
+											<option value="0">Blender</option>
+											<option value="1">Can Opener</option>
+											<option value="2">Coffee Machine</option>
+										</select>
+										<input type="hidden" name="appliance[]"> 
+										<input type="number" class="input-quantiy" name="quantity[]"> 
+										<input type="number" class="input-wats" name="watts[]"> 
+										<input type="number" step="any" class="input-quantiy" name="hours-per-day[]"> 
+										<input type="text" class="input-quantiy" name="watts-hours-per-day[]">
+									</div>
+									<div class="field-line d-flex flex-wrap justify-content-between">
+										<select class="select-field" name="appliance">
+											<span class="opt-holder"><option disabled selected hidden>SELECT AN APPLIENCE</option></span>
+											<option value="0">Blender</option>
+											<option value="1">Can Opener</option>
+											<option value="2">Coffee Machine</option>
+										</select>
+										<input type="hidden" name="appliance[]"> 
+										<input type="number" class="input-quantiy" name="quantity[]"> 
+										<input type="number" class="input-wats" name="watts[]"> 
+										<input type="number" step="any" class="input-quantiy" name="hours-per-day[]"> 
+										<input type="text" class="input-quantiy" name="watts-hours-per-day[]">
+									</div>
+									<div class="field-line d-flex flex-wrap justify-content-between">
+										<select class="select-field" name="appliance">
+											<span class="opt-holder"><option disabled selected hidden>SELECT AN APPLIENCE</option></span>
+											<option value="0">Blender</option>
+											<option value="1">Can Opener</option>
+											<option value="2">Coffee Machine</option>
+										</select>
+										<input type="hidden" name="appliance[]"> 
+										<input type="number" class="input-quantiy" name="quantity[]"> 
+										<input type="number" class="input-wats" name="watts[]"> 
+										<input type="number" step="any" class="input-quantiy" name="hours-per-day[]"> 
+										<input type="text" class="input-quantiy" name="watts-hours-per-day[]">
+ 									</div>
+								</div>
+							</div>
+							<div class="d-flex">
+								<input type="button" id="append-field" onclick="addItem('fields-container')" value="+Add Appliance" class="btn btn-sm btn-primary">
+								<a href="#" class="reset-fields">Reset All Fields</a>
+							</div>
+							<div class="d-flex justify-content-between flex-wrap mt-4">
+								<div class="calculator-comp__consumption d-flex flex-wrap align-content-end"> 
+									<a href="#" class="show-appliance-table">Show Appliance Consumption Table *</a>
+									<div class="calculator-comp__consumption-desc">* Use these estimates to provide a <br>general watt value for your appliances.</div>
+								</div>
+								<div class="calculator-comp__total">
+									<div class="calculator-comp__total-header">
+										<div class="calculator-comp__total-header-item">Total Watt Hours per Day:</div>
+										<div class="calculator-comp__total-header-item">Watt Hours Required Assuming Inherent Efficiency Loss:</div>
+									</div>
+									<div class="calculator-comp__total-box-wrap">
+										<div class="calculator-comp__total-box"></div>
+										<div class="calculator-comp__total-box"></div>
+									</div>
+									<div class="calculator-comp__total-box-wrap">
+										<div class="calculator-comp__kwh-results">Killowatt Hours Per Month:</div>
+										<div class="calculator-comp__real-total white"><input placeholder="0" type="text"> 
+											<span>Kwh/mo</span>
+										</div>
+										<div class="calculator-comp__total-footer"></div>
+										<div class="calculator-comp__total-footer"> If you already have this total, you can enter it here.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+			<div class="main-cards-alt">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="l-calculator__steps-title">
+								<h2>Step 5: Calculate System Size</h2>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="l-calculator__results-text">
+								<p>Click the "Calculate My System Size button" and we'll calculate your system size<span></span>.</p>
+							</div>
+							<div class="l-calculator__results-buttons"> 
+								<button type="submit" id="calculate-system-size" class="btn btn-lg btn-primary" onclick="addSection('l-calculator__email-results')">Calculate My System Size</button> 
+								<a class="l-calculator__results-buttons-reset" href="">Reset</a>
+							</div>
+						</div>
+						<div class="col-lg-6 mb-3">
+							<div class="l-calculator__results-form row">
+								<div class="col-lg-4 mb-3">
+									<div class="l-calculator__results-form-box">
+										<div class="form-box-label"><h4>Minimum</h4> <strong>System Size</strong></div>
+										<div id="system-size" class="size-results"></div> <span>Kilowatts</span>
+									</div>
+								</div>
+								<div class="col-lg-4 mb-3">
+									<div class="l-calculator__results-form-box">
+										<div class="form-box-label"><h4>Approximate</h4> <strong>Solar Panel Wattage</strong></div>
+										<div class="size-results d-flex">
+												<input id="sun-hour-display-alt" class="number-input__value_2" value="300" readonly>
+												<div class="counter-btns counter-btns-btns">
+													<button class="number-input__up number-input__btn" id="upAlt"></button>
+													<button class="number-input__down number-input__btn" id="downAlt"></button>
+												</div>
+										</div> 
+										<span>Watts</span>
+									</div>
+								</div>
+								<div class="col-lg-4 mb-3">
+									<div class="l-calculator__results-form-box">
+										<div class="form-box-label"><h4>Approximate Number of</h4> <strong>Solar Panels Needed:</strong></div>
+										<div id="panels-number" class="size-results"></div> 
+										<span>Solar Panels</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6"></div>
+						<div class="col-lg-6">
+							<p class="p1"><span class="s1">This is a very general system size estimation. Other factors such as shade, location, available panel space, and seasonal use need to be taken into account.</span></p>
+							<p class="p1"><span class="s1">For the most accurate and personalized system size calculation, call our solar experts at </span><a href="#"><span class="s2"><b>1-800-472-1142</b></span></a><span class="s1">.</span></p>
+							<p class="p1"><span class="s1">We want to help you get the system that’s right for you.</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="l-calculator__email-results" id="l-calculator__email-results">
+			</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
